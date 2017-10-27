@@ -53,11 +53,13 @@ var PreheatingView = Backbone.View.extend({
     if (this.extruderPercentage === 100 && this.extraPercentage === 100 && this.bedPercentage === 100) {
     	currentView.removeClass('active').addClass('hide');;
     	this.$("#preheat-wizard__finish-section").removeClass('hide').addClass('active');
+      this.$(".preheat-wizard__cancel-button").addClass('disable-btn');
     }
 
 	},
 	finishClicked: function() {
 		this.$("#preheat-wizard__finish-section").removeClass('active').addClass('hide');
+    this.$(".preheat-wizard__cancel-button").removeClass('disable-btn');
 		this.$("#preheat-wizard__preheating-progress").removeClass('hide').addClass('active');
 	},
 	openCancelModal: function() {
